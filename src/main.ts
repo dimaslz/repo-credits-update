@@ -98,7 +98,7 @@ const run = async () => {
   let newContent = text.replace(new RegExp(regex, 'g'), '').trim();
 
   if (useLocalFile) {
-    newContent = `${newContent}${fs.readFileSync(
+    newContent = `${newContent}\n\n${fs.readFileSync(
       path.resolve(__dirname, `./${localFilename}`), { encoding: "utf8" }
     )}`;
   } else {
